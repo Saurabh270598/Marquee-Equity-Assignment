@@ -1,3 +1,7 @@
 .todo-input-container > input {
   outline: none;
 }
+
+.sub-task-list-container {
+  padding-left: 12px;
+}

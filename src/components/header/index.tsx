@@ -1,5 +1,6 @@
 import { router } from "../../constant/routes";
 import { APP_ROUTE_PATH } from "../../enumeration/common.enum";
+import "./style.css";
 
 const HeaderComponent = () => {
   const handleLogoutUser = () => {
@@ -11,8 +12,12 @@ const HeaderComponent = () => {
       <div className="header-component-img-wrapper">
         <img />
       </div>
-      <div> Hi Rahul</div>
-      <div onClick={handleLogoutUser}>Logout</div>
+      <div className="header-component-profile-container">
+        <div> Hi Rahul</div>
+        <div className="logout-btn" onClick={handleLogoutUser}>
+          Logout
+        </div>
+      </div>
     </div>
   );
 };

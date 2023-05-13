@@ -1,11 +1,26 @@
 .header-component-header-wrapper {
   display: flex;
   gap: 20px;
+  padding: 20px;
+  border-bottom: 1px solid gray;
 }
 
 .header-component-img-wrapper {
   height: "30px";
   width: "30px";
   border-radius: 50%;
-  border: 1px solid black;
+}
+
+.header-component-profile-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+}
+
+.logout-btn {
+  cursor: pointer;
+}
+.logout-btn:hover {
+  color: Green;
 }

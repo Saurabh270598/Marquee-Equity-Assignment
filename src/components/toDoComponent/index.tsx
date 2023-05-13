@@ -2,7 +2,7 @@ import { useState } from "react";
 import AddTaskComponent from "./addTask";
 import { v1 } from "uuid";
 import "./style.css";
-import MainComponent from "./maintask";
+import MainComponent from "./subtask";
 const ToDoCOmponent = () => {
   const [todoText, setTodotext] = useState<string>("");
   const [todoTextAdded, setTodotextAdded] = useState<{

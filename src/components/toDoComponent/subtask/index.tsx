@@ -19,7 +19,7 @@ const MainComponent = (props: IMaintaskComponent) => {
           {props.value}
         </span>
         {Object.values(props.subtaskValue).length > 0 && (
-          <ul className="subtask-list">
+          <div className="sub-task-list-container">
             {Object.values(props.subtaskValue).map((subtask, index) => {
               const subtaskValue =
                 typeof subtask === "string" ? subtask : subtask.value;
@@ -30,7 +30,7 @@ const MainComponent = (props: IMaintaskComponent) => {
                 </div>
               );
             })}
-          </ul>
+          </div>
         )}
         {isSubTaskOpen ? (
           <>
