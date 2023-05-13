@@ -1,0 +1,11 @@
+.header-component-header-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.header-component-img-wrapper {
+  height: "30px";
+  width: "30px";
+  border-radius: 50%;
+  border: 1px solid black;
+}
