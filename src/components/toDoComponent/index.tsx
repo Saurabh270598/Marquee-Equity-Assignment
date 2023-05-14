@@ -15,14 +15,17 @@ const ToDoCOmponent = () => {
   }>({});
 
   const handleAddTask = () => {
-    setTodotextAdded({
-      ...todoTextAdded,
-      [v1()]: {
-        value: todoText,
-      },
-    });
+    if (todoText.trim().length) {
+      setTodotextAdded({
+        ...todoTextAdded,
+        [v1()]: {
+          value: todoText,
+        },
+      });
+    }
     setTodotext("");
   };
+
   const handleAddSubtask = (parentTaskKey: string, value: string) => {
     const newSubTaskKey = v1();
     const newSubTask = { value: value };
@@ -41,10 +44,9 @@ const ToDoCOmponent = () => {
   };
 
   return (
-    <div>
-      <div>My Todo</div>
-
-      <div>
+    <div className="my-todo-wrapper">
+      <div className="my-todo-text">My Todo</div>
+      <div className="my-todo-container">
         {todoTextAdded ? (
           <div>
             {Object.keys(todoTextAdded).map((parentTaskKey) => {

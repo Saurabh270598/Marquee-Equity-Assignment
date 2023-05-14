@@ -1,8 +1,9 @@
 import { IAddtaskComponent } from "./interface";
+import "./style.css";
 
 const AddTaskComponent = (props: IAddtaskComponent) => {
   return (
-    <div>
+    <div className="todo-input-wrapper">
       <input
         className="todo-input-container"
         value={props.todoText}

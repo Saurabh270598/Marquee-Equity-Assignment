@@ -4,4 +4,22 @@
 
 .sub-task-list-container {
   padding-left: 12px;
+  margin-top: 10px;
+}
+
+.my-todo-wrapper {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+}
+
+.my-todo-text {
+  font-size: 24px;
 }

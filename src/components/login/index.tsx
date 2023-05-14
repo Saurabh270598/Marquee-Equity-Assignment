@@ -1,31 +1,48 @@
-import { Fragment, useState } from "react";
+import { Fragment, useContext, useEffect, useState } from "react";
 import { router } from "../../constant/routes";
 import { login } from "../../constant/temp";
+import { authContext } from "../../context/index.context";
 import { APP_ROUTE_PATH } from "../../enumeration/common.enum";
-import DashboardComponent from "../dashboard";
 import "./style.css";
 
 const LoginPage = () => {
   const [value, setValue] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [showDashboard, setShowdashboard] = useState<boolean>(false);
+  const { setLogged } = useContext(authContext);
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setLogged && setLogged(true);
+      router.navigate(APP_ROUTE_PATH.dashboardView);
+    }
+  }, []);
+
   const handleLogin = () => {
     if (value === login.name && password === login.password) {
-      setShowdashboard(true);
+      localStorage.setItem("token", login.token);
+      setLogged && setLogged(true);
+      router.navigate(APP_ROUTE_PATH.dashboardView);
+    } else {
+      alert("User is not found");
+      router.navigate(APP_ROUTE_PATH.loginView);
     }
   };
-  {
-    showDashboard
-      ? router.navigate(APP_ROUTE_PATH.dashboardView)
-      : router.navigate(APP_ROUTE_PATH.loginView);
-  }
 
   return (
     <Fragment>
       <div className="login-wrapper">
         <div>Login To Get Access</div>
-        <input value={value} onChange={(e) => setValue(e.target.value)} />
-        <input value={password} onChange={(e) => setPassword(e.target.value)} />
+        <div>Note: Username : saurabh, Password: 123</div>
+        <input
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          placeholder="User name"
+        />
+        <input
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="User Password"
+        />
         <button onClick={handleLogin}>Login</button>
       </div>
     </Fragment>

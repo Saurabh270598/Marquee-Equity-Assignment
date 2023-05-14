@@ -1,0 +1,18 @@
+.sub-task-wrapper {
+  margin-bottom: 10px;
+}
+
+.sub-task-input-container {
+  margin-bottom: 5px;
+}
+
+.add-subtask {
+  font-size: 12px;
+  margin-left: 5px;
+  color: Gray;
+  cursor: pointer;
+}
+
+.checked-todo {
+  color: green;
+}

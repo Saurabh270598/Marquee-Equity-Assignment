@@ -1,17 +1,15 @@
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import LoginPage from "./components/login";
-import { RouterProvider } from "react-router-dom";
-import { router } from "./constant/routes";
+import AppComponent from "./components/app";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <Suspense>
-    <RouterProvider router={router} />
+    <AppComponent />
   </Suspense>
 );
 
